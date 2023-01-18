@@ -33,5 +33,8 @@
     </tr>
     @endforeach
 </table>
+<div class="pagination">
+        {{ $student_paginator->links('paginator') }}
+    </div>
 </body>
 </html>
