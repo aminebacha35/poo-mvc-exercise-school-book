@@ -21,4 +21,11 @@ class StudentController extends Controller
             'student_paginator' => $student_paginator,
         ]);
     }
+
+
+    public function show($id) {
+        $student = Student::where('id', $id)->first();
+
+        return view('students_show', ['student' => $student]);
+    }
 }

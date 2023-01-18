@@ -24,9 +24,8 @@ Route::get('/', function () {
 
 Route::get('/students', [StudentController::class, 'list']);
 
-Route::get('/students/{student_id}', function ($student_id) {
-    return abort(501, 'This should be a controller function');
-});
+Route::get('/students/{id}', [StudentController::class, 'show']);
+
 
 Route::get('/classes', function () {
     return abort(501, 'This should be a controller function');
