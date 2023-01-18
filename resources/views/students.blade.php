@@ -25,11 +25,13 @@
     <tr>
         <th>Nom</th>
         <th>Prénom</th>
+        <th>Date de naissance</th>
     </tr>
     @foreach ($student_paginator as $student)
     <tr>
         <td>{{ $student->given_name }}</td>
         <td>{{ $student->family_name }}</td>
+        <td>{{ $student->birthday }}</td>
     </tr>
     @endforeach
 </table>
