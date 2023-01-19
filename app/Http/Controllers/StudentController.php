@@ -24,7 +24,7 @@ class StudentController extends Controller
 
 
     public function show($id) {
-        $student = Student::where('id', $id)->first();
+        $student = Student::first();
 
         return view('students_show', ['student' => $student]);
     }

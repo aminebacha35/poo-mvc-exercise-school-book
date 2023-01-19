@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SchoolClassController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Models\SchoolClass;
@@ -27,9 +28,8 @@ Route::get('/students', [StudentController::class, 'list']);
 Route::get('/students/{id}', [StudentController::class, 'show']);
 
 
-Route::get('/classes', function () {
-    return abort(501, 'This should be a controller function');
-});
+Route::get('/classes', [SchoolClassController::class, 'list']);
+
 Route::get('/classes/{class_id}', function ($student_id) {
     return abort(501, 'This should be a controller function');
 });

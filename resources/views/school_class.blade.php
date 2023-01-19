@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Student</title>
+        <title>Classes</title>
 
         <!-- Styles -->
         <style>
@@ -23,21 +23,21 @@
 <body>
 <table>
     <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Date de naissance</th>
+        <th>Nom de la classe</th>
+        <th>Année</th>
+        <th>Nombre d'étudiants</th>
     </tr>
-    @foreach ($student_paginator as $student)
+    @foreach ($schoolclass_paginator as $school)
     <tr>
-        <td>{{ $student->given_name }}</td>
-        <td>{{ $student->family_name }}</td>
-        <td>{{ $student->birthday }}</td>
-
-    </tr>
-    @endforeach
+  <td>{{ $school->class }} {{ $school->number }}</td>
+        <td>{{ $school->year }}</td> 
+        <td>{{ $nStudent[$school->id-1]->students->count()}}</td>
+        </tr>
+  @endforeach    
 </table>
 <div class="pagination">
-        {{ $student_paginator->links('paginator') }}
+        {{ $schoolclass_paginator->links('paginator') }}
     </div>
+
 </body>
 </html>
