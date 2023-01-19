@@ -46,12 +46,5 @@
     </tr>
 </table>
 
-
-@foreach ($student->school_classes as $classe)
-  <p>{{ $classe->year }} : {{ $classe->class }} {{ $classe->number }}</p>
-
-    @endforeach
-    
-
 </body>
 </html>
