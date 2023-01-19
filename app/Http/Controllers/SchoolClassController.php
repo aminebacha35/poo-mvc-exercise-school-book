@@ -18,5 +18,12 @@ class SchoolClassController extends Controller
             
         ]);
     }
+
+
+    public function show($class_id) {
+        $schoolclass = SchoolClass::where('id', $class_id)->first();
+        return view('schoolclass_show', ['schoolclass' => $schoolclass]);
+    }
 }
+
 

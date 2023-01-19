@@ -29,7 +29,7 @@
     </tr>
     @foreach ($schoolclass_paginator as $school)
     <tr>
-  <td>{{ $school->class }} {{ $school->number }}</td>
+  <td>{{ $school->class }} {{ $school->school_classes }}</td>
         <td>{{ $school->year }}</td> 
         <td>{{ $nStudent[$school->id-1]->students->count()}}</td>
         </tr>
