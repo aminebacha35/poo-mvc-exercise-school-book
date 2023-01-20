@@ -20,7 +20,10 @@ use App\Models\SchoolClass;
 
 Route::get('/', function () {
     $random_students = Student::inRandomOrder()->take(10)->get();
-    return view('home', ['students' => $random_students]);
+    $random_school = SchoolClass::inRandomOrder()->take(10)->get();
+
+
+    return view('pages/home', ['students' => $random_students,'schools' => $random_school,]);
 });
 
 Route::get('/students', [StudentController::class, 'list']);

@@ -17,7 +17,7 @@ class StudentController extends Controller
             $query->orderBy($order_by, $order);
         }
         $student_paginator = $query->paginate(20);
-        return view('students', [
+        return view('pages/students', [
             'student_paginator' => $student_paginator,
         ]);
     }
@@ -25,6 +25,6 @@ class StudentController extends Controller
 
     public function show($id) {
         $student = Student::where('id', $id)->first();
-        return view('students_show', ['student' => $student]);
+        return view('pages/students_show', ['student' => $student]);
     }
 }

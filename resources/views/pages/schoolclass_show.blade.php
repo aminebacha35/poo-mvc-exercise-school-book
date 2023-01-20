@@ -1,37 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Profil</title>
+@extends('layout\default')
+@section('content')
 
-        <!-- Styles -->
         <style>
-            body {
-                max-width: 1000px;
-                margin: auto;
-            }
-            th {
-                text-align: left;
+      
+            tr {
+                text-align: center;
             }
             th, td {
+                text-align : center;
                 padding-right: 1.5rem;
             }
+            h2{
+                text-align : center;
+                margin-bottom : 80px;
+            }
+            h1{ 
+                text-align : center;
+                margin-bottom : 50px;
+            }
         </style>
-    </head>
-<body>
+    <h1>{{$schoolclass->year}} : {{$schoolclass->class}} {{$schoolclass->number}}  </h1>
 <table>
     <tr>
         <th>genre</th>
         <th>Nom</th>
         <th>Prénom</th>
-        <th>Adresse</th>
         <th>ville</th>
         <th>Code postal</th>
         <th>Email</th>
         <th>Numero</th>
         <th>Date de naissance</th>
+        <th>Détails</th>
+
     </tr>
 @foreach ($schoolclass->students as $classe)
     
@@ -39,14 +40,14 @@
         <td>{{ $classe->gender }}</td>
         <td>{{ $classe->given_name }}</td>
         <td>{{ $classe->family_name }}</td>
-        <td>{{ $classe->streetaddress }}</td>
         <td>{{ $classe->city }}</td>
         <td>{{ $classe->zipcode }}</td>
         <td>{{ $classe->email }}</td>
         <td>{{ $classe->phone }}</td>
         <td>{{ $classe->birthday }}</td>
+        <td><a href="/students/{{ $classe->id }}">Info</a></td>
+
     </tr>
     @endforeach
 </table>
-</body>
-</html>
+@stop
